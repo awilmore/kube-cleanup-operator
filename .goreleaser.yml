@@ -29,7 +29,7 @@ dockers:
     ids:
       - build
     build_flag_templates:
-      - "--pull"
+      - "--push"
       - "--platform=linux/amd64"
     image_templates:
       - "awilmore/kube-cleanup-operator:{{ .Tag }}-amd64"
@@ -42,7 +42,7 @@ dockers:
     ids:
       - build
     build_flag_templates:
-      - "--pull"
+      - "--push"
       - "--platform=linux/arm64"
     image_templates:
       - 'awilmore/kube-cleanup-operator:{{ .Tag }}-arm64'
