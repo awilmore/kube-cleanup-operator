@@ -29,7 +29,7 @@ dockers:
     ids:
       - build
     build_flag_templates:
-      - "--push"
+      - "--pull"
       - "--platform=linux/amd64"
     image_templates:
       - "awilmore/kube-cleanup-operator:{{ .Tag }}-amd64"
@@ -42,7 +42,7 @@ dockers:
     ids:
       - build
     build_flag_templates:
-      - "--push"
+      - "--pull"
       - "--platform=linux/arm64"
     image_templates:
       - 'awilmore/kube-cleanup-operator:{{ .Tag }}-arm64'
@@ -51,8 +51,8 @@ docker_manifests:
   - id: manifest-release
     name_template: "awilmore/kube-cleanup-operator:{{ .Version }}"
     image_templates:
-      - 'awilmore/kube-cleanup-operator:{{ .Version }}-amd64'
-      - 'awilmore/kube-cleanup-operator:{{ .Version }}-arm64'
+      - 'awilmore/kube-cleanup-operator:{{ .Tag }}-amd64'
+      - 'awilmore/kube-cleanup-operator:{{ .Tag }}-arm64'
 
   - id: manifest-latest
     name_template: "awilmore/kube-cleanup-operator:latest"
